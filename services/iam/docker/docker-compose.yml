@@ -6,9 +6,9 @@ services:
     container_name: iam_postgres
     restart: always
     environment:
-      POSTGRES_DB: iam_db
-      POSTGRES_USER: iam_user
-      POSTGRES_PASSWORD: iam_password
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       TZ: UTC
     ports:
       - "5432:5432"
@@ -39,8 +39,8 @@ services:
     container_name: iam_pgadmin
     restart: always
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@iam.com
-      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
     ports:
       - "5050:80"
     depends_on:
