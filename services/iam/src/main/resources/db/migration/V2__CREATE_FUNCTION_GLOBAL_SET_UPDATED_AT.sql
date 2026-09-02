@@ -1,0 +1,9 @@
+CREATE OR REPLACE FUNCTION GLOBAL_SET_UPDATED_AT()
+RETURNS TRIGGER AS $$
+BEGIN
+	NEW.UPDATED_AT = CURRENT_TIMESTAMP;
+	RETURN NEW;
+END;
+$$ LANGUAGE PLPGSQL;
+
+COMMENT ON FUNCTION GLOBAL_SET_UPDATED_AT() IS 'Generic trigger function that updates the UPDATED_AT column with the current timestamp prior to an UPDATE operation.';
