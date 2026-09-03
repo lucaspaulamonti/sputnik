@@ -12,7 +12,7 @@ CREATE TABLE RESETS(
 
 COMMENT ON TABLE RESETS IS 'Manages password reset requests for users.';
 COMMENT ON COLUMN RESETS.ID IS 'Unique identifier of the password reset request.';
-COMMENT ON COLUMN RESETS.ID_USER IS 'Identifier of the user requesting the password reset.';
+COMMENT ON COLUMN RESETS.USER_ID IS 'Identifier of the user requesting the password reset.';
 COMMENT ON COLUMN RESETS.IP_ADDRESS IS 'IP address from which the password reset request was made.';
 COMMENT ON COLUMN RESETS.USER_AGENT IS 'User-Agent of the client from which the password reset request was made.';
 COMMENT ON COLUMN RESETS.TOKEN IS 'Unique token used to authenticate and authorize the password reset request.';
